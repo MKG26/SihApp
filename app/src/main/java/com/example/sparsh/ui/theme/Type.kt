@@ -8,7 +8,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 //import com.example.my_sample_theme.R
 import com.example.sparsh.R
-import com.example.sparsh.ui.theme.SparshTheme
 
 val Montserrat = FontFamily(
     Font(R.font.montserrat_regular)
