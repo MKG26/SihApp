@@ -11,7 +11,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -55,34 +57,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun SparshTopAppBar(modifier : Modifier = Modifier){
 
-    CenterAlignedTopAppBar(
-        modifier = modifier
-            .padding(top = 20.dp),
-        title = {
-            Box(
-                modifier = modifier
-                    .padding(top = 10.dp)
-
-
-            ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.logo),
-                        contentDescription = null,
-                        modifier = Modifier
-
-                    )
-            }
-
-
-
-
-        }
-    )
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -91,37 +66,58 @@ fun frontApp(
 ) {
 
 
-    Scaffold(
-        topBar = { SparshTopAppBar()},
-        content = {
+
 
         Column(
 
             modifier = modifier
-                .padding(it)
+
 
 
         ) {
-            Text(
-                text = "Login As:",
-                fontSize = 30.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = modifier
+
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = null,
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .size(200.dp)
             )
 
-            layout(
-                image = R.drawable.railway,
-                who = R.string.railway,
+            Text(
+                text = "Login As",
+                fontSize = 40.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = modifier
+                    .align(Alignment.CenterHorizontally)
+                    .padding(top = 50.dp)
+            )
 
-                )
 
-            layout(
-                image = R.drawable.coal,
-                who = R.string.coal,
+            Row(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .fillMaxWidth()
+                    .padding(bottom = 90.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
 
-                )
+
+            ) {
+                layout(
+                    image = R.drawable.railway,
+                    who = R.string.railway,
+
+                    )
+
+                layout(
+                    image = R.drawable.coal,
+                    who = R.string.coal,
+
+                    )
+            }
         }
-    })
+
 }
 
 
@@ -137,12 +133,12 @@ fun layout(
     Card(
         modifier = modifier
             .clip(MaterialTheme.shapes.medium)
-            .padding(top = 20.dp, start = 20.dp, end = 20.dp),
+            .padding(20.dp),
         onClick = {}
     ) {
         Column(
             modifier = modifier
-                .padding(top=30.dp, start = 30.dp, end = 30.dp)
+                .padding(20.dp)
         ) {
 
 
@@ -152,7 +148,7 @@ fun layout(
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = modifier
-                    .size(width = 400.dp, height = 250.dp)
+                    .size(width = 130.dp, height = 130.dp)
                     .clip(MaterialTheme.shapes.small)
                     .padding(bottom = 10.dp)
             )
@@ -161,7 +157,7 @@ fun layout(
 
                 text = stringResource(id = who),
                 modifier = modifier
-                    .padding(bottom = 10.dp)
+
                     .align(alignment = Alignment.CenterHorizontally),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
