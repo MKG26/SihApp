@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -17,6 +18,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,9 +39,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             SparshTheme {
                 // A surface container using the 'background' color from the theme
-
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
                     frontApp()
-
+                }
             }
         }
     }
@@ -114,20 +119,19 @@ fun frontApp(
             ){
                 Button(
                     onClick = { /*TODO*/ },
-                    modifier = Modifier
-                        .padding(start = 10.dp),
+                    modifier = Modifier,
                     shape = RoundedCornerShape(10.dp)
 
                 ) {
                     Text(text = "Login")
                 }
 
-                Spacer(modifier = Modifier.width(120.dp))
+                Spacer(modifier = Modifier.width(90.dp))
                 
                 Button(
                     onClick = { /*TODO*/ },
                     modifier = Modifier
-                        .padding(start = 10.dp),
+                        .padding(start = 20.dp),
                     shape = RoundedCornerShape(10.dp)
 
                 ) {
@@ -151,7 +155,7 @@ fun layout(
     Card(
         modifier = modifier
             .clip(MaterialTheme.shapes.medium)
-            .padding(20.dp),
+            .padding(10.dp),
 
     ) {
         Column(

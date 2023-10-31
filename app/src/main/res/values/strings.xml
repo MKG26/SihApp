@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Sparsh</string>
-    <string name="railway">Railway Authority</string>
-    <string name="coal">Coal Authority</string>
+    <string name="railway">Railway\nAuthority</string>
+    <string name="coal">Coal\nAuthority</string>
     <string name="login">Login (Railway)</string>
     <string name="id">Enter your Id: </string>
     <string name="password">Enter your Password: </string>
